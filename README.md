@@ -20,10 +20,10 @@ We ask that you spend as much of the allotted time to do this test as you can; a
 Please enter/replace your details below.
 | | |
 | - | - |
-| Name | John Smith |
-| Date | 2022-03-21 |
-| Start Time | 00:00+13:00 |
-| Finish Time | 02:15+13:00 |
+| Name | Amos Nash |
+| Date | 2024-05-08 |
+| Start Time | 09:30:00 |
+| Finish Time |  |
 
 ## Requirements
 
@@ -38,7 +38,7 @@ In order to complete this test you will need the following tools:
 You should be able to complete this test on your choice of machine, and some technologies that we use have been deliberately left out to make this as accessible as possible.
 The code in this repository will compile and run on Windows, macOS and Linux.
 
-You may if you prefer use your preferred frontend technology, if you are unfamiliar with Angular - in which case, please note it below:  
+You may if you prefer use your preferred frontend technology, if you are unfamiliar with Angular - in which case, please note it below:
 - [ ] Using different frontend technology
 
 ## Instructions
