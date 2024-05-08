@@ -18,7 +18,11 @@
       <td>{{ student.lastName }}</td>
       <td>{{ student.email }}</td>
       <td>{{ student.major }}</td>
-      <td>{{ student.averageGrade }}%</td>
+      <td [ngClass]="{
+        'high-grade': student.averageGrade > 80,
+        'medium-grade': student.averageGrade <= 80 && student.averageGrade > 50,
+        'low-grade': student.averageGrade <= 50
+      }">{{ student.averageGrade }}%</td>
     </tr>
   </tbody>
 </table>
