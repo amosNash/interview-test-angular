@@ -15,7 +15,7 @@ export class StudentService {
     return this.http.get<Student[]>(this.baseUrl);
   }
 
-  addStudent(student: Student): Observable<Student> {
+  addStudent(student: Student): Observable<any> {
     return this.http.post<Student>(this.baseUrl, student);
   }
 }

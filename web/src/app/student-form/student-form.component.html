@@ -1,28 +1,28 @@
 <div>
   <h2>Add Student</h2>
-  <form (ngSubmit)="onSubmit(firstName.value, lastName.value, email.value, major.value, parseFloatAverageGrade(averageGrade.value))">
+  <form [formGroup]="studentForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="firstName">First Name:</label>
-      <input type="text" class="form-control" id="firstName" name="firstName" required #firstName>
+      <input type="text" class="form-control" id="firstName" formControlName="firstName">
     </div>
     <div class="form-group">
       <label for="lastName">Last Name:</label>
-      <input type="text" class="form-control" id="lastName" name="lastName" #lastName>
+      <input type="text" class="form-control" id="lastName" formControlName="lastName">
     </div>
     <div class="form-group">
       <label for="email">Email:</label>
-      <input type="email" class="form-control" id="email" name="email" #email>
+      <input type="email" class="form-control" id="email" formControlName="email">
     </div>
     <div class="form-group">
       <label for="major">Major:</label>
-      <input type="text" class="form-control" id="major" name="major" #major>
+      <input type="text" class="form-control" id="major" formControlName="major">
     </div>
     <div class="form-group">
       <label for="averageGrade">Average Grade:</label>
-      <input type="number" class="form-control" id="averageGrade" name="averageGrade" #averageGrade>
+      <input type="number" class="form-control" id="averageGrade" formControlName="averageGrade">
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <div *ngIf="studentForm.invalid" class="text-danger">
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="studentForm.invalid">Submit</button>
   </form>
 </div>
-
-
