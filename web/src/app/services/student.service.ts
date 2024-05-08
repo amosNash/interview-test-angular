@@ -18,4 +18,8 @@ export class StudentService {
   addStudent(student: Student): Observable<any> {
     return this.http.post<Student>(this.baseUrl, student);
   }
+
+  deleteStudent(student: Student): Observable<any> {
+    return this.http.delete(this.baseUrl, { body: student });
+  }
 }

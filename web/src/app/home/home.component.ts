@@ -26,4 +26,16 @@ export class HomeComponent implements OnInit {
       },
     });
   }
+
+  deleteStudent(student: Student) {
+    this.studentService.deleteStudent(student).subscribe({
+      next: (result) => {
+        this.students = result;
+        this.getStudents();
+      },
+      error: (error) => {
+        console.error('Error delete student', error);
+      },
+    });
+  }
 }
