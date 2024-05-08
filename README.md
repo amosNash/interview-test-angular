@@ -57,6 +57,6 @@ You may if you prefer use your preferred frontend technology, if you are unfamil
 
 Extras for if you have time:
 
-- [ ] Implement the `Delete` method of `IStudentService`
-- [ ] Add delete endpoint to the API
-- [ ] Add delete functionality to the frontend
+- [x] Implement the `Delete` method of `IStudentService`
+- [x] Add delete endpoint to the API
+- [x] Add delete functionality to the frontend
