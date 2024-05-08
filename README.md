@@ -23,7 +23,7 @@ Please enter/replace your details below.
 | Name | Amos Nash |
 | Date | 2024-05-08 |
 | Start Time | 09:30:00 |
-| Finish Time |  |
+| Finish Time | 23:35:00 |
 
 ## Requirements
 
@@ -60,3 +60,7 @@ Extras for if you have time:
 - [x] Implement the `Delete` method of `IStudentService`
 - [x] Add delete endpoint to the API
 - [x] Add delete functionality to the frontend
+
+
+| Start Time | 09:30:00 |
+| Finish Time | 23:35:00 |
