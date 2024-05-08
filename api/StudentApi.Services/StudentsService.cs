@@ -1,6 +1,7 @@
 ﻿using StudentApi.Models.Students;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace StudentApi.Services
 {
@@ -53,10 +54,18 @@ namespace StudentApi.Services
         /// </summary>
         /// <param name="student"></param>
         /// <returns></returns>
-        /// <exception cref="NotImplementedException"></exception>
         public bool DeleteStudent(Student student)
         {
-            throw new NotImplementedException();
+            var studentToDelete = students.FirstOrDefault(s => s.Email == student.Email);
+
+            if (studentToDelete != null)
+            {
+                students.Remove(studentToDelete);
+                return true;
+            }
+            else {
+                return false;
+            }
         }
 
         /// <summary>

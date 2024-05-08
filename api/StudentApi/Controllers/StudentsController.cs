@@ -56,5 +56,25 @@ namespace StudentApi.Controllers
                 return StatusCode(500, new { message = "Failed to add student" });
             }
         }
+
+        /// <summary>
+        /// delete a student
+        /// </summary>
+        /// <returns></returns>
+        [HttpDelete]
+        public async Task<IActionResult> Delete([FromBody]Student student)
+        {
+            var response = await Mediator.Send(new DeleteStudentRequest { Student = student });
+
+            if (response)
+            {
+                return Ok(new { message = "Student deleted successfully" });
+            }
+            else
+            {
+                return StatusCode(500, new { message = "Failed to delete student" });
+            }
+        }
+
     }
 }
