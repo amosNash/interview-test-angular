@@ -26,12 +26,10 @@ namespace StudentApi.Tests.Controllers
         [Fact]
         public async Task Get_ReturnsListOfStudents()
         {
-            // Arrange
             var students = new List<Student>() { /* create some test students */ };
             var response = new GetStudentsResponse(students);
             _mediatorMock.Setup(m => m.Send(It.IsAny<GetStudentsRequest>(), default))
                          .ReturnsAsync(response);
-
             // Act
             var result = await _controller.Get();
 
