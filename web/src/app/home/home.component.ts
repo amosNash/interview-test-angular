@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, Inject, OnInit } from '@angular/core';
 import { Student } from '../models/student.model';
+import { StudentService } from '../services/student.service';
 
 @Component({
   selector: 'app-home',
@@ -8,18 +8,22 @@ import { Student } from '../models/student.model';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  public students: Student[] = [];
+  students: Student[] = [];
 
-  constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
-    http.get<Student[]>(baseUrl + 'students').subscribe({
+  constructor(private studentService: StudentService) {}
+
+  ngOnInit() {
+    this.getStudents();
+  }
+
+  getStudents() {
+    this.studentService.getStudents().subscribe({
       next: (result) => {
         this.students = result;
       },
       error: (error) => {
-        console.error(error);
+        console.error('Error retrieving students', error);
       },
     });
   }
-
-  ngOnInit() {}
 }

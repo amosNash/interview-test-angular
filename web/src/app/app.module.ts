@@ -7,6 +7,7 @@ import { RouterModule } from "@angular/router";
 import { HomeComponent } from "./home/home.component";
 import { NavMenuComponent } from "./nav-menu/nav-menu.component";
 import { StudentFormComponent } from './student-form/student-form.component';
+import { FormsModule } from "@angular/forms";
 
 function getBaseUrl() {
   return "http://localhost:5000/";
@@ -22,6 +23,7 @@ function getBaseUrl() {
       {path: "add-student", component: StudentFormComponent, pathMatch: "full"},
     ]),
     HttpClientModule,
+    FormsModule
   ],
   providers: [{ provide: "BASE_URL", useFactory: getBaseUrl, deps: [] }],
   bootstrap: [AppComponent],
