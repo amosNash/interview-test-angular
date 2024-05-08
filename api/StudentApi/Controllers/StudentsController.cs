@@ -37,5 +37,24 @@ namespace StudentApi.Controllers
 
             return reponse.Students;
         }
+
+        /// <summary>
+        /// adds a student
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public async Task<IActionResult> Post([FromBody] Student student)
+        {
+            var response = await Mediator.Send(new AddStudentRequest { Student = student });
+
+            if (response)
+            {
+                return Ok(new { message = "Student added successfully" });
+            }
+            else
+            {
+                return StatusCode(500, new { message = "Failed to add student" });
+            }
+        }
     }
 }
